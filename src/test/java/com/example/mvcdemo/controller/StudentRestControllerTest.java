@@ -2,7 +2,6 @@ package com.example.mvcdemo.controller;
 
 
 import com.example.mvcdemo.model.Student;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.hasSize;
@@ -31,7 +28,6 @@ class StudentRestControllerTest {
     @Autowired
     private MockMvc mvc;
 
-    @Order(1)
     @Test
     void getOneStudent() throws Exception {
         mvc.perform(get("/api/students/getOne/{id}",1))
