@@ -14,7 +14,7 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @RequestMapping("/students")
+    @RequestMapping("/list")
     public String getStudents(Model model){
         model.addAttribute("students", studentService.getStudents());
         return "index";
